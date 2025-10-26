@@ -41,12 +41,15 @@ function vite_enqueue_assets(): void
             if (is_array($manifest)) {
                 if (isset($manifest['src/main.js']['file'])) {
                     $js_file = $manifest['src/main.js']['file'];
-                    wp_enqueue_script('main-js', get_template_directory_uri() . '/dist/' . $js_file, [], false, true);
+                    var_dump($js_file);
+                    var_dump(get_template_directory_uri() . '/dist/' . $js_file);
+                    wp_enqueue_script('main-js', get_template_directory_uri() . '/dist/' . $js_file, [], time(), true);
                 }
 
                 if (isset($manifest['src/main.js']['css'])) {
                     foreach ($manifest['src/main.js']['css'] as $css_file) {
-                        wp_enqueue_style('main-css', get_template_directory_uri() . '/dist/' . $css_file, [], false, 'all');
+                        var_dump(get_template_directory_uri() . '/dist/' . $css_file);
+                        wp_enqueue_style('main-css', get_template_directory_uri() . '/dist/' . $css_file, [], time());
                     }
                 }
             }
