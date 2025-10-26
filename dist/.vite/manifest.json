@@ -1,0 +1,11 @@
+{
+  "src/main.js": {
+    "file": "assets/main-DV69kLXI.js",
+    "name": "main",
+    "src": "src/main.js",
+    "isEntry": true,
+    "css": [
+      "assets/main-8e-_BWDg.css"
+    ]
+  }
+}

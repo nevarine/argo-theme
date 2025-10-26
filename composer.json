@@ -1,0 +1,10 @@
+{
+  "require": {
+    "yahnis-elsts/plugin-update-checker": "^5.6"
+  },
+  "autoload": {
+    "files": [
+      "inc/cpt-team-member.php"
+    ]
+  }
+}
