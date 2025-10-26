@@ -1,0 +1,24 @@
+name: Create Release and Upload Asset
+
+on:
+  push:
+    tags:
+      - '1*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Build Zip Archive
+        run: zip -r argo-theme.zip . -x ".git*" ".github*" "README.md"
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: argo-theme.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
